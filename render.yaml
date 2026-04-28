@@ -1,7 +1,6 @@
 services:
   - type: static
-    name: niumedia-website
+    name: niumedia
     env: static
     buildCommand: ""
-    staticPublishPath: ./dist
-
+    publishDir: dist

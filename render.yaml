@@ -2,5 +2,4 @@ services:
   - type: web
       name: niumedia
           env: static
-              buildCommand: ""
-                  publishDir: dist
+              publishDir: dist

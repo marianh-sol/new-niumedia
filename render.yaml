@@ -1,0 +1,7 @@
+services:
+  - type: static
+    name: niumedia-website
+    env: static
+    buildCommand: ""
+    staticPublishPath: ./dist
+

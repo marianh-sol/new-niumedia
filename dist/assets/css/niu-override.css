@@ -1,0 +1,723 @@
+/* ============================================================
+   NIUMEDIA DESIGN SYSTEM OVERRIDE
+   Aplica los tokens y la estética del DS oficial sobre el template Renev.
+   Cargar DESPUÉS de main.css para que sobrescriba.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+:root {
+  /* ---------- Brand colors ---------- */
+  --niu-orange:        #F06000;
+  --niu-orange-600:    #E55A00;
+  --niu-orange-400:    #FF7A1A;
+  --niu-orange-300:    #FF9447;
+  --niu-orange-100:    #FFE6D1;
+  --niu-orange-50:     #FFF4EA;
+
+  --niu-gray:          #908080;
+  --niu-gray-700:      #6B5F5F;
+  --niu-gray-600:      #7A6E6E;
+  --niu-gray-500:      #908080;
+  --niu-gray-400:      #B0A5A5;
+  --niu-gray-300:      #CDC4C4;
+  --niu-gray-200:      #E5DFDF;
+  --niu-gray-100:      #F2EEEE;
+  --niu-gray-50:       #FAF8F8;
+
+  --niu-ink:           #2B2424;
+  --niu-white:         #FFFFFF;
+
+  /* Gradients */
+  --grad-orange: linear-gradient(135deg, #FF8A2B 0%, #F06000 60%, #E55A00 100%);
+  --grad-orange-soft: linear-gradient(135deg, #FFE6D1 0%, #FFF4EA 100%);
+
+  /* Type */
+  --font-display: 'Nunito', system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body:    'Open Sans', system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Shadow */
+  --shadow-xs: 0 1px 2px rgba(43, 36, 36, 0.06);
+  --shadow-sm: 0 2px 6px rgba(43, 36, 36, 0.08);
+  --shadow-md: 0 6px 18px rgba(43, 36, 36, 0.10);
+  --shadow-lg: 0 18px 40px rgba(43, 36, 36, 0.14);
+  --shadow-orange: 0 12px 28px rgba(240, 96, 0, 0.28);
+
+  /* Radii */
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 14px;
+  --r-xl: 24px;
+  --r-pill: 999px;
+  --r-blob: 60% 40% 65% 35% / 55% 45% 55% 45%;
+
+  /* Motion */
+  --ease-out:   cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-base:   240ms;
+}
+
+/* ============================================================
+   GLOBAL — fondo blanco + tipografía
+   ============================================================ */
+html, body {
+  background: var(--niu-white) !important;
+  color: var(--niu-ink) !important;
+  font-family: var(--font-body) !important;
+  line-height: 1.7 !important;
+}
+
+p, li, span, a, label, input, textarea, select, button {
+  font-family: var(--font-body);
+}
+
+/* Headings: Nunito 800 italic */
+h1, h2, h3, h4, h5, h6,
+.heading1 h2, .heading2 h2, .heading3 h2, .heading4 h2,
+.text-anime-style-3, .text-anime-style-2 {
+  font-family: var(--font-display) !important;
+  font-style: italic !important;
+  font-weight: 800 !important;
+  color: var(--niu-ink) !important;
+  letter-spacing: -0.01em !important;
+}
+
+h5, h6 { font-weight: 700 !important; }
+
+/* Eyebrow ("kicker" style — small uppercase orange labels) */
+.heading1 h5, .heading2 h5, .heading3 h5, .heading4 h5 {
+  color: var(--niu-orange) !important;
+  font-style: normal !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  font-size: 12px !important;
+}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+header, .header-area, .header-section-area, .header1-section-area,
+.menu-area, .vl-header1-section-area {
+  background: var(--niu-white) !important;
+  border-bottom: 1px solid var(--niu-gray-200) !important;
+  box-shadow: var(--shadow-xs) !important;
+}
+
+header *, .header-area *, .menu-area *, .vl-header1-section-area * {
+  color: var(--niu-ink);
+}
+
+.menu-list a, .navbar-nav a, .menu-area ul li a,
+.vl-main-menu a, .vl-main-menu ul li a,
+nav.vl-mobile-menu-active ul li a {
+  color: var(--niu-gray-700) !important;
+  font-family: var(--font-display) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  font-size: 12px !important;
+  font-style: normal !important;
+}
+
+.menu-list a:hover, .navbar-nav a:hover,
+.menu-area ul li a:hover, .menu-area ul li.active a,
+.vl-main-menu a:hover, nav.vl-mobile-menu-active ul li a:hover,
+nav.vl-mobile-menu-active ul li.active > a {
+  color: var(--niu-orange) !important;
+}
+
+/* Submenu styling */
+.vl-main-menu ul li ul.sub-menu,
+nav.vl-mobile-menu-active ul li ul.sub-menu {
+  background: var(--niu-white) !important;
+  border: 1px solid var(--niu-gray-200) !important;
+  box-shadow: var(--shadow-md) !important;
+  border-radius: var(--r-md) !important;
+}
+
+.vl-main-menu ul li ul.sub-menu li a,
+nav.vl-mobile-menu-active ul li ul.sub-menu li a {
+  color: var(--niu-gray-700) !important;
+  text-transform: none !important;
+  letter-spacing: 0.02em !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+}
+
+.vl-logo img, .footer-logo1 img {
+  filter: none !important;
+}
+
+/* ============================================================
+   BUTTONS — pill-shaped with warm orange shadow
+   ============================================================ */
+.vl-btn1, .vl-btn2, .vl-btn3,
+button.vl-btn1, a.vl-btn1, a.vl-btn2, a.vl-btn3,
+.btn-area1 a, .btn-area2 a {
+  background: var(--niu-orange) !important;
+  background-image: none !important;
+  color: var(--niu-white) !important;
+  border-radius: var(--r-pill) !important;
+  border: none !important;
+  font-family: var(--font-display) !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  padding: 14px 30px !important;
+  box-shadow: var(--shadow-orange) !important;
+  transition: all var(--dur-base) var(--ease-out) !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.vl-btn1:hover, .vl-btn2:hover, .vl-btn3:hover,
+.btn-area1 a:hover, .btn-area2 a:hover {
+  background: var(--niu-orange-600) !important;
+  color: var(--niu-white) !important;
+  transform: translateY(-2px) !important;
+}
+
+.vl-btn1::before, .vl-btn1::after,
+.vl-btn2::before, .vl-btn2::after,
+.vl-btn3::before, .vl-btn3::after {
+  display: none !important;
+}
+
+/* Outline / secondary buttons */
+.btn-outline, .vl-btn-outline {
+  background: transparent !important;
+  color: var(--niu-orange) !important;
+  border: 2px solid var(--niu-orange) !important;
+  box-shadow: none !important;
+}
+.btn-outline:hover, .vl-btn-outline:hover {
+  background: var(--niu-orange) !important;
+  color: var(--niu-white) !important;
+}
+
+/* ============================================================
+   SECTIONS — fondo blanco, alternar con tinte soft
+   ============================================================ */
+section, .section-area,
+.hero1-section-area, .hero2-section-area, .hero3-section-area, .hero4-section-area,
+.about1-section-area, .about4-section-area, .abotu3-section-area,
+.service1-section-area, .service2-section-area, .service3-section-area, .service4-section-area,
+.service-details-section,
+.testimonial2-section-area, .testimonial3-section-area, .testimonial4-section-area,
+.testimonial-inner-section-area, .testimonials-2, .testimonials-4,
+.team1-section-area, .team2-section-area, .team3-section-area, .team4-section-area,
+.cta2-section-area,
+.faq-inner-section-area,
+.project-inner-section-area, .project-details-section-area, .project-bottom-scetion,
+.portfolio1-section-area, .portfolio1-inner-section-area, .portfolio2-section-area, .portfoli2-section-area, .portfolio4-section-area,
+.contact-inner-area,
+.blog-details-section-area, .vl-blog-1-area, .vl-blog-2-area, .vl-blog-4-area,
+.slider2-section-area, .slider5-section-area,
+.inner-section-area,
+.section-light {
+  background: var(--niu-white) !important;
+  background-image: none !important;
+  color: var(--niu-ink) !important;
+}
+
+section *:not(.vl-btn1):not(.vl-btn2):not(.vl-btn3):not(.btn-area1 a):not(.btn-area2 a):not(.niu-badge):not(.niu-badge *) {
+  /* Keep text in ink/gray — except buttons which stay white */
+}
+
+/* Tinted alternating section */
+.section-tint, .vl-section--tint,
+section:nth-of-type(even).about4-section-area,
+.cta2-section-area {
+  background: var(--niu-orange-50) !important;
+}
+
+/* Soft gray section */
+.section-soft, .vl-section--soft {
+  background: var(--niu-gray-50) !important;
+}
+
+/* ============================================================
+   TEXT COLORS — body text on light bg
+   ============================================================ */
+section p, section li, .niu-body, p {
+  color: var(--niu-gray-700) !important;
+  font-family: var(--font-body) !important;
+}
+
+section a:not(.vl-btn1):not(.vl-btn2):not(.vl-btn3):not(.btn-area1 a):not(.btn-area2 a) {
+  color: var(--niu-orange);
+  text-decoration: none;
+  transition: color var(--dur-base) var(--ease-out);
+}
+
+section a:not(.vl-btn1):not(.vl-btn2):not(.vl-btn3):hover {
+  color: var(--niu-orange-600);
+}
+
+/* ============================================================
+   CARDS — service / portfolio / testimonial
+   ============================================================ */
+.service-boxarea, .service1-boxarea, .service2-boxarea, .service3-boxarea, .service4-boxarea,
+.testimonial-boxarea, .testimonial1-boxarea, .testimonial2-boxarea, .testimonial3-boxarea, .testimonial4-boxarea,
+.portfolio-boxarea, .project-boxarea,
+.team-boxarea, .team1-boxarea, .team2-boxarea, .team3-boxarea, .team4-boxarea,
+.faq-boxarea, .blog-boxarea {
+  background: var(--niu-white) !important;
+  border: 1px solid var(--niu-gray-200) !important;
+  border-radius: var(--r-lg) !important;
+  box-shadow: var(--shadow-sm) !important;
+  color: var(--niu-ink) !important;
+  transition: all var(--dur-base) var(--ease-out) !important;
+}
+
+.service-boxarea:hover, .service1-boxarea:hover, .service2-boxarea:hover, .service3-boxarea:hover, .service4-boxarea:hover,
+.testimonial-boxarea:hover, .portfolio-boxarea:hover, .project-boxarea:hover,
+.team-boxarea:hover, .team1-boxarea:hover, .team2-boxarea:hover,
+.faq-boxarea:hover, .blog-boxarea:hover {
+  box-shadow: var(--shadow-md) !important;
+  transform: translateY(-4px) !important;
+  border-color: var(--niu-orange-300) !important;
+}
+
+.service-boxarea h3, .service-boxarea h4, .service-boxarea h5,
+.testimonial-boxarea p, .portfolio-boxarea h3, .portfolio-boxarea a,
+.team-boxarea h3, .faq-boxarea h3 {
+  color: var(--niu-ink) !important;
+}
+
+/* Service card icon: convert to orange gradient circle */
+.service-boxarea .icon, .service-boxarea > svg,
+.service1-boxarea > .icon, .service2-boxarea > .icon, .service3-boxarea > .icon, .service4-boxarea > .icon {
+  background: var(--grad-orange);
+  color: var(--niu-white);
+  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-orange);
+}
+
+/* Portfolio cards labels in orange */
+.portfolio-boxarea p, .project-boxarea p {
+  color: var(--niu-orange) !important;
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 12px !important;
+}
+
+.portfolio-boxarea a, .project-boxarea a, .portfolio-boxarea h3 {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 800;
+  color: var(--niu-ink) !important;
+}
+
+/* Stars in testimonials → orange */
+.testimonial-boxarea ul li i,
+.testimonial-boxarea i.fa-star {
+  color: var(--niu-orange) !important;
+}
+
+/* Quote SVG icon → orange gradient */
+.testimonial-boxarea > svg path {
+  fill: var(--niu-orange) !important;
+}
+
+/* ============================================================
+   FORMS — inputs with orange focus glow
+   ============================================================ */
+input, textarea, select,
+.input-area input, .input-area textarea, .input-area select {
+  background: var(--niu-white) !important;
+  color: var(--niu-ink) !important;
+  border: 1.5px solid var(--niu-gray-300) !important;
+  border-radius: var(--r-lg) !important;
+  font-family: var(--font-body) !important;
+  font-size: 15px !important;
+  padding: 14px 16px !important;
+  transition: all var(--dur-base) var(--ease-out) !important;
+  outline: none !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--niu-gray-500) !important;
+  opacity: 1;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--niu-orange) !important;
+  box-shadow: 0 0 0 3px rgba(240, 96, 0, 0.18) !important;
+}
+
+/* ============================================================
+   FOOTER — dark warm ink + orange accents
+   ============================================================ */
+footer, .vl-footer1-section-area, .vl-footer2-section-area, .vl-footer4-section-area {
+  background: var(--niu-ink) !important;
+  background-image: none !important;
+  color: var(--niu-white) !important;
+}
+
+footer h3, footer h4, footer h5 {
+  color: var(--niu-orange) !important;
+  font-family: var(--font-display) !important;
+  font-style: italic !important;
+  font-weight: 700 !important;
+}
+
+footer p, footer li, footer a {
+  color: rgba(255, 255, 255, 0.75) !important;
+  font-family: var(--font-body) !important;
+}
+
+footer a:hover {
+  color: var(--niu-orange) !important;
+}
+
+footer .social-area a, footer .social-icons a {
+  color: var(--niu-white);
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--dur-base) var(--ease-out);
+}
+
+footer .social-area a:hover, footer .social-icons a:hover {
+  background: var(--niu-orange);
+  color: var(--niu-white) !important;
+}
+
+/* Footer copyright bar */
+.copyright-area, .footer-copyright {
+  background: rgba(0, 0, 0, 0.2) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* ============================================================
+   SECTION HEADINGS center alignment
+   ============================================================ */
+.heading1, .heading2, .heading3, .heading4 {
+  margin-bottom: 48px;
+}
+
+/* "Mark" highlights inside headings */
+.text-orange, .niu-mark {
+  color: var(--niu-orange) !important;
+  font-style: italic;
+}
+
+/* ============================================================
+   PHOTO BLOB STYLE — photos masked with orange blob shape + outline
+   For .img1 inside portfolio and certain hero sections
+   ============================================================ */
+.niu-blob-img,
+.about-image-wrap, .hero-photo-wrap {
+  position: relative;
+  border-radius: var(--r-blob);
+  overflow: hidden;
+  border: 8px solid var(--niu-orange);
+  box-shadow: var(--shadow-md);
+}
+
+.niu-blob-img img, .about-image-wrap img, .hero-photo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ============================================================
+   ICON BADGES — orange gradient circles for funnel stages
+   ============================================================ */
+.niu-badge {
+  border-radius: 50%;
+  background: var(--grad-orange);
+  box-shadow: var(--shadow-orange);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 88px;
+  height: 88px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+.niu-badge img { width: 100%; height: 100%; display: block; }
+
+/* ============================================================
+   FUNNEL SECTION — Atraer → Convertir → Cerrar → Deleitar
+   ============================================================ */
+.niu-funnel-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .niu-funnel-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.niu-funnel-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--niu-white);
+  border: 1px solid var(--niu-gray-200);
+  border-radius: var(--r-lg);
+  padding: 32px 24px;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--dur-base) var(--ease-out);
+}
+
+.niu-funnel-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  border-color: var(--niu-orange-300);
+}
+
+.niu-funnel-card__num {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--niu-orange);
+  text-transform: uppercase;
+  margin-top: 16px;
+}
+
+.niu-funnel-card__title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 800;
+  font-size: 24px;
+  color: var(--niu-ink);
+  margin: 6px 0 4px;
+}
+
+.niu-funnel-card__sub {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--niu-gray-700);
+  margin: 0;
+}
+
+/* ============================================================
+   TRUST BAR — partner logos
+   ============================================================ */
+.niu-trustbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding: 32px;
+  background: var(--niu-gray-50);
+  border-radius: var(--r-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.niu-trustbar__label {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--niu-gray-500);
+}
+
+.niu-trustbar img {
+  height: 40px;
+  opacity: 0.85;
+  transition: opacity var(--dur-base) var(--ease-out);
+}
+
+.niu-trustbar img:hover {
+  opacity: 1;
+}
+
+/* ============================================================
+   HERO — adapted for design system
+   ============================================================ */
+.hero1-section-area, .hero2-section-area, .hero3-section-area, .hero4-section-area {
+  background: var(--niu-white) !important;
+  padding: 96px 0 !important;
+}
+
+.hero1-section-area h1, .hero2-section-area h1,
+.hero1-section-area h2, .hero2-section-area h2 {
+  font-family: var(--font-display) !important;
+  font-style: italic !important;
+  font-weight: 800 !important;
+  font-size: clamp(2.5rem, 5vw, 4.5rem) !important;
+  line-height: 1.05 !important;
+  color: var(--niu-ink) !important;
+}
+
+/* ============================================================
+   MARQUEE — slow-moving brand band
+   ============================================================ */
+.slider2-section-area, .slider5-section-area {
+  background: var(--niu-orange-50) !important;
+  border-top: 1px solid var(--niu-gray-200) !important;
+  border-bottom: 1px solid var(--niu-gray-200) !important;
+}
+
+.brand-single-box h3 {
+  color: var(--niu-ink) !important;
+  font-family: var(--font-display) !important;
+  font-style: italic !important;
+  font-weight: 800 !important;
+}
+
+.brand-single-box h3 a {
+  color: var(--niu-ink) !important;
+  text-decoration: none !important;
+}
+
+.brand-single-box h3 a:hover {
+  color: var(--niu-orange) !important;
+}
+
+/* ============================================================
+   PAGINATION
+   ============================================================ */
+.pagination .page-item .page-link {
+  border: 1.5px solid var(--niu-gray-300) !important;
+  color: var(--niu-gray-700) !important;
+  background: var(--niu-white) !important;
+  border-radius: var(--r-md) !important;
+  font-family: var(--font-display) !important;
+  font-weight: 700 !important;
+  margin: 0 4px;
+}
+
+.pagination .page-item .page-link.active,
+.pagination .page-item.active .page-link {
+  background: var(--niu-orange) !important;
+  border-color: var(--niu-orange) !important;
+  color: var(--niu-white) !important;
+}
+
+.pagination .page-item .page-link:hover {
+  border-color: var(--niu-orange) !important;
+  color: var(--niu-orange) !important;
+}
+
+/* ============================================================
+   PROCUS-CURSOR (custom cursor effects from template) — desactivar
+   ============================================================ */
+.procus-cursor, .procus-cursor2 {
+  display: none !important;
+}
+
+/* ============================================================
+   BREADCRUMB / HERO HEADER (404, internal pages)
+   ============================================================ */
+.hero-header-area {
+  background: var(--niu-orange-50) !important;
+  padding: 64px 0 !important;
+}
+
+.hero-header-area h1 {
+  color: var(--niu-ink) !important;
+}
+
+.hero-header-area h4, .hero-header-area h4 a {
+  color: var(--niu-gray-700) !important;
+  font-family: var(--font-body) !important;
+  font-style: normal !important;
+  font-weight: 600 !important;
+  font-size: 15px !important;
+}
+
+.hero-header-area h4 a:hover {
+  color: var(--niu-orange) !important;
+}
+
+/* ============================================================
+   404 page
+   ============================================================ */
+.error-text-area h2 {
+  color: var(--niu-ink) !important;
+}
+
+.error-text-area p {
+  color: var(--niu-gray-700) !important;
+}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+.accordion-item {
+  background: var(--niu-white) !important;
+  border: 1px solid var(--niu-gray-200) !important;
+  border-radius: var(--r-lg) !important;
+  margin-bottom: 12px !important;
+  overflow: hidden;
+}
+
+.accordion-button {
+  background: var(--niu-white) !important;
+  color: var(--niu-ink) !important;
+  font-family: var(--font-display) !important;
+  font-weight: 700 !important;
+  font-style: italic !important;
+}
+
+.accordion-button:not(.collapsed) {
+  background: var(--niu-orange-50) !important;
+  color: var(--niu-orange) !important;
+  box-shadow: none !important;
+}
+
+.accordion-body {
+  background: var(--niu-white) !important;
+  color: var(--niu-gray-700) !important;
+}
+
+/* ============================================================
+   WHATSAPP FLOATING BUTTON — keep green (it's the brand standard)
+   ============================================================ */
+/* Mantenemos verde porque es el color universal de WhatsApp */
+
+/* ============================================================
+   DARKMODE OVERRIDE — for any element that hardcoded a dark bg
+   ============================================================ */
+[style*="background-color: rgb(3, 6, 10)"],
+[style*="background:#03060A"],
+[style*="background-color:#03060A"] {
+  background: var(--niu-white) !important;
+  color: var(--niu-ink) !important;
+}
+
+/* ============================================================
+   IMAGE ALT - reserve space, prevent stretch on broken images
+   ============================================================ */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ============================================================
+   UTILITY classes
+   ============================================================ */
+.niu-text-orange { color: var(--niu-orange) !important; }
+.niu-text-ink { color: var(--niu-ink) !important; }
+.niu-bg-orange-50 { background: var(--niu-orange-50) !important; }
+.niu-bg-gray-50 { background: var(--niu-gray-50) !important; }
+.niu-italic { font-style: italic; }

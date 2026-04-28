@@ -1,0 +1,190 @@
+/* ============================================================
+   NiuMedia Design System — Colors & Type
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+:root {
+  /* ---------- Brand colors ---------- */
+  --niu-orange:        #F06000;   /* primary — sampled from logo */
+  --niu-orange-600:    #E55A00;   /* hover/press */
+  --niu-orange-400:    #FF7A1A;   /* highlight, gradient top */
+  --niu-orange-300:    #FF9447;   /* gradient middle */
+  --niu-orange-100:    #FFE6D1;   /* tint background */
+  --niu-orange-50:     #FFF4EA;   /* surface tint */
+
+  --niu-gray:          #908080;   /* secondary — "media" wordmark */
+  --niu-gray-700:      #6B5F5F;   /* body text on light */
+  --niu-gray-600:      #7A6E6E;
+  --niu-gray-500:      #908080;
+  --niu-gray-400:      #B0A5A5;
+  --niu-gray-300:      #CDC4C4;
+  --niu-gray-200:      #E5DFDF;
+  --niu-gray-100:      #F2EEEE;
+  --niu-gray-50:       #FAF8F8;
+
+  --niu-ink:           #2B2424;   /* near-black warm */
+  --niu-white:         #FFFFFF;
+
+  /* ---------- Semantic ---------- */
+  --color-bg:          var(--niu-white);
+  --color-bg-soft:     var(--niu-gray-50);
+  --color-bg-tint:     var(--niu-orange-50);
+  --color-surface:     var(--niu-white);
+
+  --color-fg:          var(--niu-ink);
+  --color-fg-muted:    var(--niu-gray-700);
+  --color-fg-subtle:   var(--niu-gray-500);
+  --color-fg-on-brand: var(--niu-white);
+
+  --color-brand:       var(--niu-orange);
+  --color-brand-hover: var(--niu-orange-600);
+  --color-accent:      var(--niu-gray);
+
+  --color-border:      var(--niu-gray-200);
+  --color-border-strong: var(--niu-gray-300);
+
+  --color-success:     #4CAF50;
+  --color-warning:     #FFB300;
+  --color-danger:      #E53935;
+  --color-info:        #2196F3;
+
+  /* ---------- Brand gradient (used on icon badges, buttons, blobs) ---------- */
+  --grad-orange: linear-gradient(135deg, #FF8A2B 0%, #F06000 60%, #E55A00 100%);
+  --grad-orange-soft: linear-gradient(135deg, #FFE6D1 0%, #FFF4EA 100%);
+
+  /* ---------- Type ---------- */
+  --font-display: 'Nunito', system-ui, -apple-system, "Segoe UI", sans-serif; /* heavy + italic — closest match to wordmark */
+  --font-body:    'Open Sans', system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:    ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --fw-regular: 400;
+  --fw-medium:  600;
+  --fw-bold:    700;
+  --fw-heavy:   800;
+  --fw-black:   900;
+
+  /* Display sizes (clamp for fluid web; fixed for slides) */
+  --fs-hero:    clamp(2.75rem, 5vw + 1rem, 4.5rem);   /* 44 → 72 */
+  --fs-h1:      clamp(2.25rem, 3vw + 1rem, 3.25rem);  /* 36 → 52 */
+  --fs-h2:      clamp(1.75rem, 2vw + 0.75rem, 2.25rem); /* 28 → 36 */
+  --fs-h3:      1.5rem;     /* 24 */
+  --fs-h4:      1.25rem;    /* 20 */
+  --fs-lead:    1.125rem;   /* 18 — body lead */
+  --fs-body:    1rem;       /* 16 */
+  --fs-small:   0.875rem;   /* 14 */
+  --fs-xs:      0.75rem;    /* 12 */
+
+  --lh-tight:  1.1;
+  --lh-snug:   1.25;
+  --lh-normal: 1.5;
+  --lh-loose:  1.7;
+
+  --tracking-tight: -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide:   0.04em;
+  --tracking-wider:  0.12em;  /* used on small caps eyebrows */
+
+  /* ---------- Spacing (8px base) ---------- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+  --sp-9: 96px;
+  --sp-10: 128px;
+
+  /* ---------- Radius ---------- */
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 14px;
+  --r-xl: 24px;
+  --r-pill: 999px;
+  --r-blob: 60% 40% 65% 35% / 55% 45% 55% 45%;  /* organic blob mask */
+
+  /* ---------- Shadow ---------- */
+  --shadow-xs: 0 1px 2px rgba(43, 36, 36, 0.06);
+  --shadow-sm: 0 2px 6px rgba(43, 36, 36, 0.08);
+  --shadow-md: 0 6px 18px rgba(43, 36, 36, 0.10);
+  --shadow-lg: 0 18px 40px rgba(43, 36, 36, 0.14);
+  --shadow-orange: 0 12px 28px rgba(240, 96, 0, 0.28);
+
+  /* ---------- Motion ---------- */
+  --ease-out:   cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast:   150ms;
+  --dur-base:   240ms;
+  --dur-slow:   420ms;
+}
+
+/* ============================================================
+   Base type semantics
+   ============================================================ */
+.niu-h1, .niu-display {
+  font-family: var(--font-display);
+  font-weight: var(--fw-heavy);
+  font-style: italic;            /* hero headings inherit logo italic */
+  font-size: var(--fs-hero);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-fg);
+}
+.niu-h2 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-style: italic;
+  font-size: var(--fs-h1);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-fg);
+}
+.niu-h3 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-h2);
+  line-height: var(--lh-snug);
+  color: var(--color-fg);
+}
+.niu-h4 {
+  font-family: var(--font-display);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-h3);
+  line-height: var(--lh-snug);
+  color: var(--color-fg);
+}
+.niu-eyebrow {
+  font-family: var(--font-display);
+  font-weight: var(--fw-heavy);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-brand);
+}
+.niu-lead {
+  font-family: var(--font-body);
+  font-size: var(--fs-lead);
+  line-height: var(--lh-loose);
+  color: var(--color-fg-muted);
+}
+.niu-body {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-loose);
+  color: var(--color-fg-muted);
+}
+.niu-small {
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  line-height: var(--lh-normal);
+  color: var(--color-fg-subtle);
+}
+
+/* Highlight: orange word inside a heading */
+.niu-mark {
+  color: var(--color-brand);
+  font-style: italic;
+}

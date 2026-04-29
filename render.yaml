@@ -1,1 +1,1 @@
-services: [{ type: web, name: niumedia, env: static, publishDir: dist }]
+staticSites: [{ name: niumedia, publishDir: dist }]

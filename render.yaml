@@ -1,5 +1,1 @@
-services:
-  - type: web
-      name: niumedia
-          env: static
-              publishDir: dist
+services: [{ type: web, name: niumedia, env: static, publishDir: dist }]
